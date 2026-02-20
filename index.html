@@ -1,222 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Fathima Taj | Data Analyst Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
-}
-
-body {
-    background: #f4f6f8;
-    color: #222;
-    height: 600vh; /* Controls animation length */
-}
-
-/* BACKGROUND CANVAS */
-#bg-canvas {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    opacity: 0.15; /* Watermark transparency */
-}
-
-/* MAIN CONTAINER */
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 60px 20px;
-}
-
-/* CARD STYLE */
-.card {
-    background: rgba(255,255,255,0.95);
-    border-radius: 14px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* HEADER */
-.header {
-    text-align: center;
-}
-
-.header h1 {
-    font-size: 2.8rem;
-    color: #1a237e;
-}
-
-.header h2 {
-    font-size: 1.3rem;
-    margin-top: 8px;
-    color: #444;
-}
-
-.contact {
-    margin-top: 15px;
-    font-size: 1rem;
-    color: #333;
-}
-
-/* SECTION TITLES */
-.section-title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #1a237e;
-    border-left: 5px solid #1a237e;
-    padding-left: 12px;
-}
-
-/* TEXT */
-p, li {
-    font-size: 1.05rem;
-    line-height: 1.7;
-}
-
-ul {
-    padding-left: 20px;
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 40px;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Akash M | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<canvas id="bg-canvas"></canvas>
+    <!-- Scroll Animation Canvas -->
+    <div class="animation-container">
+        <canvas id="hero-canvas"></canvas>
+    </div>
 
-<div class="container">
+    <!-- Resume Content -->
+    <section class="content">
 
-    <!-- HEADER -->
-    <div class="card header">
-        <h1>Fathima Taj</h1>
-        <h2>Data Analyst</h2>
-        <div class="contact">
-            📧 faatimataj7@gmail.com &nbsp; | &nbsp; 📞 7871179650
+        <div class="card">
+            <h1>Akash M</h1>
+            <h3>Aspiring Software Developer</h3>
+            <p>
+                Aspiring software developer with strong interest in coding, algorithms, and 
+                application development. Familiar with Python programming, logical reasoning, 
+                and basic software concepts. Passionate about continuous learning.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Contact</h2>
+            <p>📍 Mudivaithanendal, Tamil Nadu – 628102</p>
+            <p>📞 9952172708</p>
+            <p>✉️ akash2006m123@gmail.com</p>
+        </div>
+
+        <div class="card">
+            <h2>Education</h2>
+            <p><strong>B.E. Electronics and Communication Engineering</strong></p>
+            <p>Government College of Engineering – Tirunelveli</p>
+            <p>Expected: July 2027</p>
+        </div>
+
+        <div class="card">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python Programming</li>
+                <li>C, C++, Java</li>
+                <li>Logical Reasoning</li>
+                <li>Project Planning & Execution</li>
+                <li>Solution-Oriented Approach</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Project</h2>
+            <h3>Smart Agriculture System</h3>
+            <p>
+                Project to protect agriculture fields from heavy rain during harvesting 
+                season and maintain constant water levels. Successfully implemented 
+                during 12th standard.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Certifications</h2>
+            <ul>
+                <li>C, C++, Java, Python</li>
+                <li>Typewriting Higher Level (English & Tamil)</li>
+                <li>Hindi Pandit</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-header">Resume Assistant</div>
+        <div class="chat-body" id="chat-body"></div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Ask about my resume...">
+            <button onclick="sendMessage()">Send</button>
         </div>
     </div>
 
-    <!-- SUMMARY -->
-    <div class="card">
-        <div class="section-title">Professional Summary</div>
-        <p>
-            Detail-oriented and analytical Data Analyst with strong academic background and hands-on
-            exposure to data handling, analysis, and visualization. Skilled in deriving actionable
-            insights from complex datasets and eager to contribute to data-driven decision-making
-            in a professional environment.
-        </p>
-    </div>
-
-    <!-- EDUCATION -->
-    <div class="card">
-        <div class="section-title">Education</div>
-        <p>
-            <strong>Bachelor of Engineering – Electronics and Communication Engineering</strong><br>
-            Government College of Engineering, Tirunelveli<br>
-            <strong>CGPA:</strong> 8.1
-        </p>
-    </div>
-
-    <!-- SKILLS -->
-    <div class="card">
-        <div class="section-title">Skills</div>
-        <ul>
-            <li>Data Analysis & Interpretation</li>
-            <li>Python (Basics)</li>
-            <li>SQL (Basics)</li>
-            <li>MS Excel</li>
-            <li>Problem Solving & Analytical Thinking</li>
-        </ul>
-    </div>
-
-    <!-- DECLARATION -->
-    <div class="card">
-        <div class="section-title">Declaration</div>
-        <p>
-            I hereby declare that the information furnished above is true and correct to the best of
-            my knowledge and belief.
-        </p>
-    </div>
-
-    <div class="footer">
-        © 2026 Fathima Taj · Resume Portfolio
-    </div>
-
-</div>
-
-<script>
-const canvas = document.getElementById("bg-canvas");
-const ctx = canvas.getContext("2d");
-
-function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
-
-const frameCount = 240;
-const frames = [];
-
-function framePath(i) {
-    return `frames/ezgif-frame-${String(i).padStart(3, "0")}.jpg`;
-}
-
-for (let i = 1; i <= frameCount; i++) {
-    const img = new Image();
-    img.src = framePath(i);
-    frames.push(img);
-}
-
-function drawFrame(i) {
-    const img = frames[i];
-    if (!img.complete) return;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    const scale = Math.max(
-        canvas.width / img.width,
-        canvas.height / img.height
-    );
-
-    const x = (canvas.width - img.width * scale) / 2;
-    const y = (canvas.height - img.height * scale) / 2;
-
-    ctx.drawImage(
-        img,
-        x,
-        y,
-        img.width * scale,
-        img.height * scale
-    );
-}
-
-window.addEventListener("scroll", () => {
-    const scrollTop = document.documentElement.scrollTop;
-    const maxScroll =
-        document.documentElement.scrollHeight - window.innerHeight;
-
-    const index = Math.min(
-        frameCount - 1,
-        Math.floor((scrollTop / maxScroll) * frameCount)
-    );
-
-    requestAnimationFrame(() => drawFrame(index));
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
