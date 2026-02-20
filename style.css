@@ -86,7 +86,7 @@ ul {
 
 .chat-input button {
   background: #2563eb;
-  color: white;
+  color: transparent;
   border: none;
   padding: 10px 14px;
   cursor: pointer;
